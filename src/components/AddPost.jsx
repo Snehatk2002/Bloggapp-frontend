@@ -4,7 +4,8 @@ import Navbar from './Navbar'
 
 const AddPost = () => {
     const [data,setdata] = useState(
-        {"Message":"","userId":sessionStorage.getItem("userId")}
+        {"Message":"",
+        "userId":sessionStorage.getItem("userId")}
     )
     const inputHandler=(event)=>{
         setdata({...data,[event.target.name]: event.target.value})
@@ -15,7 +16,7 @@ const AddPost = () => {
             headers:{"token":sessionStorage.getItem("token"),"Content-Type":"application/json"}
           }).then(
             (response)=>{
-                console.log(response.data)
+                console.log(data)
                 if (response.data.status=="success")
                  {
                     alert("SUCCESSFULLY ADDED")

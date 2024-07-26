@@ -9,7 +9,7 @@ import ViewMyPost from './components/ViewMyPost';
 
 function App() {
   return (
-    <div >
+    
         <BrowserRouter>
         <Routes>
         <Route path='/' element={<Login/>}/>
@@ -17,10 +17,8 @@ function App() {
           <Route path='/add' element={<AddPost/>}/>          
           <Route path='/viewall' element={<Viewall/>}/>          
           <Route path='/mypost' element={<ViewMyPost/>}/>          
-
         </Routes>
         </BrowserRouter>
-    </div>
   );
 }
 
