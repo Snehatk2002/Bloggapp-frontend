@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 
 const ViewMyPost = () => {
-    const [data,setdata]=useState([])
+    const [data,setData]=useState([])
     const [token,setToken]=useState(sessionStorage.getItem("token"))
-    const [userId,setuserId]=useState({"userId":sessionStorage.getItem("userId")})
+    const [userId,setuserId]=useState(
+        {"userId":sessionStorage.getItem("userId")}
+    )
       const fetchData=()=>{
         axios.post("http://localhost:8080/viewmypost",userId,{
             headers:{"token":token,"Content-Type":"application/json"}
         }).then(
         (response)=>{
-          setdata(response.data)
+          setData(response.data)
         }
         ).catch().finally()
       }

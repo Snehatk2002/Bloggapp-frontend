@@ -20,7 +20,7 @@ const Login = () => {
                 if (response.data.status=="success")
                  {
                  sessionStorage.setItem("token",response.data.token)
-                 sessionStorage.setItem("userid",response.data.userid)
+                 sessionStorage.setItem("userId",response.data.userid)
                  navigate("/add")
                 } else {
                     alert("ERROR")
